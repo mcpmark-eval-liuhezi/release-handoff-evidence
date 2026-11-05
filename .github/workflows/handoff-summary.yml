@@ -9,13 +9,9 @@ jobs:
     steps:
       - name: Write handoff summary
         run: |
-          {
-            echo "release-handoff-evidence CI run for handover handoff"
-            echo "https://github.com/mcpmark-eval-liuhezi/release-handoff-evidence/actions/runs/{{GITHUB_RUN_ID}}"
-          } > handoff-summary.txt
+          echo 'release-handoff-evidence CI run for handover documentation - artifacts upload handoff-summary' > handoff-summary.txt
 
       - name: Upload handoff summary
-        run: echo "Uploading handoff-summary.txt as artifact handoff-summary"
         uses: actions/upload-artifact@v4
         with:
           name: handoff-summary
